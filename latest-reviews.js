@@ -1,28 +1,47 @@
 
 import { supabase } from './supabase.js';
 
-// Load the five most recent community reviews
+// Load the five most recent reviews for published movies
 async function loadLatestReviews() {
 
     const reviewList = document.getElementById('latestReviewsList');
 
     if (!reviewList) return;
 
+    // First, get all published movies
+    const { data: movies, error: movieError } = await supabase
+        .from('movies')
+        .select('id, title, slug, poster_url')
+        .eq('status', 'published');
+
+    if (movieError) {
+        console.error('Error loading published movies:', movieError);
+        reviewList.textContent = 'Unable to load the latest reviews.';
+        return;
+    }
+
+    reviewList.innerHTML = '';
+
+    if (!movies || movies.length === 0) {
+        reviewList.textContent =
+            'No community reviews yet. Be the first to share your verdict!';
+        return;
+    }
+
+    // Create a lookup of published movies
+    const movieLookup = {};
+
+    movies.forEach(function(movie) {
+        movieLookup[movie.id] = movie;
+    });
+
+    const publishedMovieIds = movies.map(movie => movie.id);
+
+    // Only retrieve reviews belonging to published movies
     const { data: reviews, error } = await supabase
         .from('community_reviews')
-        .select(`
-            grade,
-            review_text,
-            created_at,
-            user_id,
-            movies!inner (
-                title,
-                slug,
-                poster_url,
-                status
-            )
-        `)
-        .eq('movies.status', 'published')
+        .select('grade, review_text, created_at, user_id, movie_id')
+        .in('movie_id', publishedMovieIds)
         .order('created_at', { ascending: false })
         .limit(5);
 
@@ -31,8 +50,6 @@ async function loadLatestReviews() {
         reviewList.textContent = 'Unable to load the latest reviews.';
         return;
     }
-
-    reviewList.innerHTML = '';
 
     if (!reviews || reviews.length === 0) {
         reviewList.textContent =
@@ -65,7 +82,7 @@ async function loadLatestReviews() {
     // Display each review
     reviews.forEach(function(review) {
 
-        const movie = review.movies;
+        const movie = movieLookup[review.movie_id];
         if (!movie) return;
 
         const card = document.createElement('article');
@@ -81,7 +98,6 @@ async function loadLatestReviews() {
         const title = document.createElement('h3');
         title.textContent = movie.title;
 
-        // Clickable reviewer username
         const member = document.createElement('p');
         member.className = 'latest-review-member';
 
