@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelRated | Movies. Rated Honestly.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                REEL<span>RATED</span>.
+            </a>
+
+            <!-- MOBILE MENU TOGGLE -->
+            <input
+                type="checkbox"
+                id="mobileMenuToggle"
+                class="mobile-menu-checkbox"
+            >
+
+            <label for="mobileMenuToggle" class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="nav-menu">
+
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="catalogue.html">Movies</a>
+                    <a href="index.html#reviews">Reviews</a>
+                    <a href="community.html">Community</a>
+                </div>
+
+                <div class="nav-account">
+                    <a href="auth.html" id="loginLink">Log In</a>
+
+                    <a href="auth.html" class="write-button" id="signupLink">
+                        Create Account
+                    </a>
+
+                    <a href="my-account.html" id="myAccountLink" hidden>
+                        My Account
+                    </a>
+
+                    <a href="#" id="logoutLink" hidden>
+                        Log Out
+                    </a>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero" id="home">
+            <p class="eyebrow">WELCOME TO REELRATED</p>
+
+            <h1>Movies.<br><span>Rated Honestly.</span></h1>
+
+            <p class="hero-description">
+                Discover great films, read honest reviews
+                and find your next favourite movie.
+            </p>
+
+            <a href="catalogue.html" class="explore-button">
+                Explore Movies →
+            </a>
+        </section>
+
+
+        <!-- MOVIE SEARCH AND FILTER -->
+        <section class="movie-section" id="movies">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR NEXT MOVIE STARTS HERE</p>
+                    <h2>Explore Movies</h2>
+                </div>
+            </div>
+
+            <input
+                type="text"
+                id="movieSearch"
+                placeholder="Search for a movie..."
+            >
+
+            <div class="movie-filter">
+                <label for="genreFilter">Filter by Genre</label>
+
+                <select id="genreFilter">
+                    <option value="">All Genres</option>
+                </select>
+            </div>
+
+            <div class="movie-grid" id="movieGrid">
+            </div>
+
+        </section>
+
+
+        <!-- LATEST REVIEWS -->
+        <section class="reviews-section" id="reviews">
+            <p class="eyebrow">THE LATEST VERDICTS</p>
+            <h2>Latest Reviews</h2>
+
+            <div id="latestReviewsList">
+                <p class="empty-message">
+                    Loading the latest reviews...
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- COMMUNITY -->
+        <section class="community-section" id="community">
+            <h2>Everyone's a Critic.</h2>
+
+            <p>
+                Share your opinions, rate your favourite films
+                and join the ReelRated community.
+            </p>
+
+            <a href="community.html" class="explore-button">
+                Explore Community Reviews →
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="index.html" class="logo">
+            REEL<span>RATED</span>.
+        </a>
+
+        <p>Movies. Rated Honestly.</p>
+
+        <p>© 2026 ReelRated. All rights reserved.</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="database.js"></script>
+    <script type="module" src="account.js"></script>
+    <script type="module" src="latest-reviews.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

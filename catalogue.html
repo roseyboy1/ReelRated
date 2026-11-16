@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Catalogue | ReelRated</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">REEL<span>RATED</span>.</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="catalogue.html">Movies</a>
+                <a href="index.html#reviews">Reviews</a>
+                <a href="community.html">Community</a>
+            </div>
+
+            <div class="nav-account">
+                <a href="auth.html" id="loginLink">Log In</a>
+                <a href="auth.html" class="write-button" id="signupLink">Create Account</a>
+                <a href="my-account.html" id="myAccountLink" hidden>My Account</a>
+                <a href="#" id="logoutLink" hidden>Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- CATALOGUE HEADER -->
+        <section class="community-reviews-header">
+            <p class="eyebrow">THE REELRATED COLLECTION</p>
+            <h1>Explore Movies.</h1>
+            <p>Discover films, compare ratings and find your next favourite.</p>
+        </section>
+
+        <!-- MOVIE CATALOGUE -->
+        <section class="movie-section" id="movies">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">FIND YOUR NEXT FILM</p>
+                    <h2>All Movies</h2>
+                </div>
+            </div>
+
+            <input
+                type="text"
+                id="movieSearch"
+                placeholder="Search for a movie..."
+            >
+
+            <div class="movie-filter">
+                <label for="genreFilter">Filter by Genre</label>
+
+                <select id="genreFilter">
+                    <option value="">All Genres</option>
+                </select>
+            </div>
+
+            <div class="movie-grid" id="movieGrid"></div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="index.html" class="logo">REEL<span>RATED</span>.</a>
+        <p>Movies. Rated Honestly.</p>
+        <p>© 2026 ReelRated. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="database.js"></script>
+    <script type="module" src="account.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

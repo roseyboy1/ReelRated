@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Community Reviews | ReelRated</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                REEL<span>RATED</span>.
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="catalogue.html">Movies</a>
+                <a href="community.html">Community</a>
+            </div>
+
+            <a href="auth.html" class="write-button">
+                Write a Review
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- COMMUNITY HEADER -->
+    <main>
+
+        <section class="community-reviews-header">
+
+            <p class="eyebrow">THE PEOPLE'S VERDICTS</p>
+
+            <h1>Community Reviews</h1>
+
+            <p>
+                Honest opinions. Different perspectives.
+                One community of movie lovers.
+            </p>
+
+        </section>
+
+
+        <!-- REVIEW FILTERS AND SORTING -->
+        <section class="community-reviews-section">
+
+            <div class="community-controls">
+
+                <div>
+                    <label for="movieReviewSearch">Find a movie:</label>
+
+                    <input
+                        type="text"
+                        id="movieReviewSearch"
+                        placeholder="Search movie titles..."
+                    >
+                </div>
+
+                <div>
+                    <label for="reviewSort">Sort reviews:</label>
+
+                    <select id="reviewSort">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="highest">Highest Grade</option>
+                        <option value="lowest">Lowest Grade</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="gradeFilter">Filter by grade:</label>
+
+                    <select id="gradeFilter">
+                        <option value="all">All Grades</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="B-">B-</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="C-">C-</option>
+                        <option value="D+">D+</option>
+                        <option value="D">D</option>
+                        <option value="D-">D-</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- ALL COMMUNITY REVIEWS -->
+            <div id="communityReviewsList">
+
+                <p class="empty-message">
+                    Loading community reviews...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <a href="index.html" class="logo">
+            REEL<span>RATED</span>.
+        </a>
+
+        <p>Movies. Rated Honestly.</p>
+
+        <p>© 2026 ReelRated. All rights reserved.</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="community.js"></script>
+
+</body>
+</html>

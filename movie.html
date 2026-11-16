@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Review | ReelRated</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            REEL<span>RATED</span>
+        </a>
+
+        <div class="nav-account">
+            <a href="catalogue.html">← Back to Movies</a>
+            <a href="my-account.html">My Account</a>
+        </div>
+    </nav>
+
+    <!-- MOVIE DETAILS -->
+    <main>
+
+        <section class="movie-detail">
+
+            <div class="detail-poster">
+                <img id="movieImage" src="" alt="Movie poster">
+            </div>
+
+            <div class="detail-content">
+
+                <p id="movieYear" class="detail-year"></p>
+
+                <h1 id="movieTitle">Movie Title</h1>
+
+                <!-- MOVIE VERDICTS -->
+                <div class="movie-verdicts">
+
+                    <!-- EDITORIAL REVIEW -->
+                    <div class="individual-community-grade">
+                        <span>EDITORIAL REVIEW</span>
+                        <strong id="movieGrade">—</strong>
+                        <p>REELRATED'S VERDICT</p>
+                    </div>
+
+                    <!-- COMMUNITY VERDICT -->
+                    <div class="individual-community-grade">
+                        <span>COMMUNITY VERDICT</span>
+                        <strong id="communityAverage">No ratings yet</strong>
+                        <p id="communityCount">0 reviews</p>
+                    </div>
+
+                </div>
+
+                <!-- WATCHLIST -->
+                <div class="watchlist-section">
+
+                    <button id="watchlistButton" type="button">
+                        + Add to Watchlist
+                    </button>
+
+                    <p id="watchlistMessage"></p>
+
+                </div>
+
+                <p id="movieGenre"></p>
+
+                <h3>Synopsis</h3>
+
+                <p id="movieSynopsis"></p>
+
+                <h3>ReelRated Review</h3>
+
+                <p id="movieReview"></p>
+
+            </div>
+
+        </section>
+
+        <!-- COMMUNITY REVIEWS -->
+        <section class="community-reviews">
+
+            <h2>Community Verdict</h2>
+
+            <p>What's your verdict on this movie?</p>
+
+            <!-- GRADE SELECTION -->
+            <div class="community-grade">
+
+                <label for="communityGrade">Your Grade</label>
+
+                <select id="communityGrade" required>
+
+                    <option value="">Select a grade</option>
+
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="A-">A-</option>
+
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="B-">B-</option>
+
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="C-">C-</option>
+
+                    <option value="D+">D+</option>
+                    <option value="D">D</option>
+                    <option value="D-">D-</option>
+
+                    <option value="F">F</option>
+
+                </select>
+
+            </div>
+
+            <!-- WRITTEN REVIEW -->
+            <div class="community-review-text">
+
+                <label for="communityReviewText">
+                    Your Review (Optional)
+                </label>
+
+                <textarea
+                    id="communityReviewText"
+                    placeholder="What did you think of this movie?"
+                    rows="5"></textarea>
+
+            </div>
+
+            <!-- SUBMIT REVIEW -->
+            <button id="submitCommunityReview">
+                Submit Review
+            </button>
+
+            <p id="reviewMessage"></p>
+
+            <!-- EXISTING COMMUNITY REVIEWS -->
+            <div class="community-review-list">
+
+                <h3>What the Community Thinks</h3>
+
+                <div id="communityReviewList">
+                    <p>Community reviews will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="movie.js"></script>
+
+</body>
+</html>

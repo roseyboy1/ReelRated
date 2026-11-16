@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | ReelRated</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            REEL<span>RATED</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Movies</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="community.html">Community</a>
+        </div>
+    </nav>
+
+    <!-- ACCOUNT HEADER -->
+    <main class="account-page">
+
+        <section class="account-header">
+
+            <p class="account-eyebrow">YOUR REELRATED PROFILE</p>
+
+            <h1>My Account</h1>
+
+            <p id="accountEmail">Loading account...</p>
+
+        </section>
+
+        <!-- ADMIN DASHBOARD LINK -->
+        <section class="account-reviews" id="adminDashboardSection" hidden>
+
+            <h2>Administration</h2>
+
+            <p class="account-description">
+                Manage movies and editorial reviews on ReelRated.
+            </p>
+
+            <a href="admin.html" class="write-button">
+                Open Admin Dashboard →
+            </a>
+
+        </section>
+
+        <!-- USERNAME SETUP -->
+        <section class="account-reviews">
+
+            <h2>Your Public Username</h2>
+
+            <p class="account-description">
+                Choose how other ReelRated members will see you.
+            </p>
+
+            <form id="usernameForm">
+
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Choose a username"
+                    minlength="3"
+                    maxlength="20"
+                    pattern="[a-zA-Z0-9_]+"
+                    required
+                >
+
+                <p class="account-description">
+                    3–20 characters. Letters, numbers and underscores only.
+                </p>
+
+                <button type="submit" class="write-button">
+                    Save Username
+                </button>
+
+                <p id="usernameMessage"></p>
+
+            </form>
+
+        </section>
+
+        <!-- PROFILE BIO -->
+        <section class="account-reviews">
+
+            <h2>Your Profile Bio</h2>
+
+            <p class="account-description">
+                Tell the ReelRated community a little about yourself and your movie taste.
+            </p>
+
+            <p id="bioDisplay" class="account-description">
+                Loading your bio...
+            </p>
+
+            <button
+                type="button"
+                id="editBioButton"
+                class="write-button"
+            >
+                Add Bio
+            </button>
+
+            <form id="bioForm" hidden>
+
+                <textarea
+                    id="bioInput"
+                    placeholder="I'm a movie lover who can't resist a good thriller..."
+                    maxlength="250"
+                    rows="4"
+                ></textarea>
+
+                <p class="account-description">
+                    Maximum 250 characters.
+                </p>
+
+                <button type="submit" class="write-button">
+                    Save Bio
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelBioButton"
+                    class="write-button"
+                >
+                    Cancel
+                </button>
+
+                <p id="bioMessage"></p>
+
+            </form>
+
+        </section>
+
+        <!-- FAVOURITE MOVIES -->
+        <section class="account-reviews">
+
+            <h2>Your Favourite Movies</h2>
+
+            <p class="account-description">
+                Choose up to three films that represent your taste in movies.
+            </p>
+
+            <div id="favoriteMoviesList">
+                <p>Loading favourite movies...</p>
+            </div>
+
+            <p id="favoriteMoviesMessage"></p>
+
+        </section>
+
+        <!-- WATCHLIST -->
+        <section class="account-reviews">
+
+            <h2>Your Watchlist</h2>
+
+            <p class="account-description">
+                Movies you've saved to watch later.
+            </p>
+
+            <div id="watchlistMoviesList">
+                <p>Loading your Watchlist...</p>
+            </div>
+
+        </section>
+
+        <!-- ACCOUNT STATISTICS -->
+        <section class="account-stats">
+
+            <div class="account-stat">
+                <span id="moviesReviewed">0</span>
+                <p>Movies Reviewed</p>
+            </div>
+
+            <div class="account-stat">
+                <span id="averageGrade">—</span>
+                <p>Average Grade</p>
+            </div>
+
+        </section>
+
+        <!-- REVIEW HISTORY -->
+        <section class="account-reviews">
+
+            <h2>Your Reviews</h2>
+
+            <p class="account-description">
+                Your personal movie-rating history.
+            </p>
+
+            <div id="myReviewsList">
+                <p>Loading your reviews...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="my-account.js"></script>
+
+</body>
+</html>
