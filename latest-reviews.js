@@ -15,12 +15,14 @@ async function loadLatestReviews() {
             review_text,
             created_at,
             user_id,
-            movies (
+            movies!inner (
                 title,
                 slug,
-                poster_url
+                poster_url,
+                status
             )
         `)
+        .eq('movies.status', 'published')
         .order('created_at', { ascending: false })
         .limit(5);
 
